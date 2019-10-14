@@ -6,7 +6,12 @@ var app = new Vue({
     data: {
         //message:'Hello Dismas'
         textarea: '',
-        blobid: ''
+        blobid: '',
+        userId: {
+          user1:1,
+          user2:2,
+          user3:3
+        }
     },
     methods: {
 
@@ -19,6 +24,10 @@ var app = new Vue({
             var textarea = this.textarea
             var blob = new Blob([textarea], {type: "text/plain; charset=utf-8"});
             saveAs(blob, this.blobid + " .txt");
+        },
+
+        TestButton: function() {
+          alert(this.userId.user1);
         }
 
     }
