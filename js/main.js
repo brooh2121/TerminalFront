@@ -7,11 +7,7 @@ var app = new Vue({
         //message:'Hello Dismas'
         textarea: '',
         blobid: '',
-        userId: {
-          user1:1,
-          user2:2,
-          user3:3
-        }
+        user: ''
     },
     methods: {
 
@@ -27,7 +23,8 @@ var app = new Vue({
         },
 
         TestButton: function() {
-          alert(this.userId.user1);
+          alert(this.user);
+          //blobApi
         }
 
     }
