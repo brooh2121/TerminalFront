@@ -23,7 +23,7 @@ var app = new Vue({
         },
 
         TestButton: function() {
-          alert(this.user);
+          alert(this.user + " " + this.blobid);
           //blobApi
         }
 
