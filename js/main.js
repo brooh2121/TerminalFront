@@ -7,7 +7,8 @@ var app = new Vue({
         //message:'Hello Dismas'
         textarea: '',
         blobid: '',
-        user: ''
+        system: '',
+        endpoint:'https://jsonplaceholder.typicode.com/posts'
     },
     methods: {
 
@@ -23,7 +24,7 @@ var app = new Vue({
         },
 
         TestButton: function() {
-          alert(this.user);
+          alert(this.endpoint + "={" + this.blobid + "}?=system={" + this.system +"}");
           //blobApi
         }
 

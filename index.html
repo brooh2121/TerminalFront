@@ -9,39 +9,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/filesaver.js"></script>
+    <style>
+    </style>
 </head>
 <body>
 <!--<p><textarea rows="10" cols="45" name="text"></textarea></p>-->
 <!--<div id="app">{{ message }}</div>-->
 <div id="app">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary md-1">
+    <a class="navbar-brand" href="#">Dismas Terminal</a>
+  </nav>
+
+<div class="container-fluid h-100">
+  <div class="row justify-content-center align-items-center h-50">
+    <div class="col-sm-5 col-md-5 col-lg-6 col-xl-5">
     <form>
         <div class="form-group">
-            <label for="exampleFormControlInput1">Enter Blob ID ...</label>
-            <input v-model="blobid" type="email" class="form-control col-sm-2" id="exampleFormControlInput1" ></input>
+            <label for="exampleFormControlInput1" class="col-form-label-lg">Enter Blob ID ...</label>
+            <input v-model="blobid" type="number" class="form-control form-control-lg" id="exampleFormControlInput1" ></input>
         </div>
-
         <div class="form-group">
-            <label for="exampleFormControlTextarea1">Blob body</label>
-            <textarea v-model="textarea" class="form-control col-sm-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="exampleFormControlInput1" class="col-form-label-lg">SystemName</label>
+          <select v-model="system" class="form-control form-control-lg">
+            <option disabled value="">SystemName ...</option>
+            <option>RSA1</option>
+            <option>RSA_EOSAGO</option>
+            <option>BSI1</option>
+          </select>
         </div>
+        <div class= "form-grou">
+          <button @click="getBlob" class="btn btn-primary btn-outline-dark btn-lg" type="submit">Get Blob</button>
+          <!--<button @click="TestButton" class="btn btn-primary btn-outline-dark btn-lg" type="submit">TestButton</button>-->
+          <button @click="saveBlob" class="btn btn-primary btn-outline-dark btn-lg" type="submit">Save File</button>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="col-form-label-lg">Blob body</label>
+            <textarea v-model="textarea" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="10" readonly></textarea>
+        </div>
+
     </form>
+   </div>
+  </div>
+</div>
 
-    <div class= "form-group">
-
-      <button @click="getBlob" class="btn btn-primary btn-outline-dark" type="submit">Get Blob</button>
-      <button @click="TestButton" class="btn btn-primary btn-outline-dark" type="submit">TestButton</button>
-      <button @click="saveBlob" class="btn btn-primary btn-outline-dark" type="submit">Save File</button>
-
-      <div class="col-md-2">
-        <strong>UserId</strong>
-        <select v-model="user" class="form-control">
-          <option disabled value="">UserId</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-        </select>
-      </div>
-    </div>
     <!--<input v-model="blobid"></input>-->
     <!--<textarea v-model="textarea" rows="10" cols="45"></textarea>-->
     <!--<button v-on:click="getBlob">Get Blob</button>-->
