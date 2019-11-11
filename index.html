@@ -30,33 +30,32 @@
             <input v-model="blobid" type="number" class="form-control form-control-lg" id="exampleFormControlInput1" ></input>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1" class="col-form-label-lg">SystemName</label>
-          <select v-model="system" class="form-control form-control-lg">
-            <option disabled value="">SystemName ...</option>
-            <option>RSA1</option>
-            <option>RSA_EOSAGO</option>
-            <option>BSI1</option>
-          </select>
-        </div>
-        <div class= "form-grou">
-          <button @click="getBlob" class="btn btn-primary btn-outline-dark btn-lg" type="submit">Get Blob</button>
-          <!--<button @click="TestButton" class="btn btn-primary btn-outline-dark btn-lg" type="submit">TestButton</button>-->
-          <button @click="saveBlob" class="btn btn-primary btn-outline-dark btn-lg" type="submit">Save File</button>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1" class="col-form-label-lg">Blob body</label>
-            <textarea v-model="textarea" class="form-control form-control-lg" id="exampleFormControlTextarea1" rows="10" readonly></textarea>
+            <label for="exampleFormControlTextarea1">Blob body</label>
+            <textarea v-model="textarea" class="form-control col-sm-5" id="exampleFormControlTextarea1" rows="3" readonly></textarea>
         </div>
 
-    </form>
-   </div>
-  </div>
-</div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">UserId</label>
+          <select v-model="user" class="form-control col-sm-2">
+            <option disabled value="">UserId</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+
+    <div class= "form-group">
+      <button @click="getBlob" class="btn btn-primary btn-outline-dark" type="submit">Get Blob</button>
+      <button @click="TestButton" class="btn btn-primary btn-outline-dark" type="submit">TestButton</button>
+      <button @click="saveBlob" class="btn btn-primary btn-outline-dark" type="submit">Save File</button>
+    </div>
+
 
     <!--<input v-model="blobid"></input>-->
     <!--<textarea v-model="textarea" rows="10" cols="45"></textarea>-->
     <!--<button v-on:click="getBlob">Get Blob</button>-->
-
+    </form>
 </div>
 <script src="js/main.js"></script>
 </body>

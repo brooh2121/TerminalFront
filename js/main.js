@@ -24,7 +24,7 @@ var app = new Vue({
         },
 
         TestButton: function() {
-          alert(this.endpoint + "={" + this.blobid + "}?=system={" + this.system +"}");
+          alert(this.user + " " + this.blobid);
           //blobApi
         }
 
